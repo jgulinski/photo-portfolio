@@ -1,6 +1,8 @@
+import { StaticImageData } from "next/image";
+
 export type Photo = {
     id: number;
-    src: string;
+    src: StaticImageData;
     alt: string;
     category: string | null;
   };
