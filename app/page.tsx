@@ -10,20 +10,16 @@ import photo4 from "/public/photo4.jpg";
 import photo5 from "/public/photo5.jpg";
 import photo6 from "/public/photo6.jpg";
 
-async function getPhotos(): Promise<Photo[]> {
-  return [
-    { id: 1, src: photo1, alt: "Image 1", category: "nature" },
-    { id: 2, src: photo2, alt: "Image 2", category: "nature" },
-    { id: 3, src: photo3, alt: "Image 3", category: "nature" },
-    { id: 4, src: photo4, alt: "Image 4", category: null },
-    { id: 5, src: photo5, alt: "Image 5", category: null },
-    { id: 6, src: photo6, alt: "Image 6", category: null },
-  ];
-}
+const photos: Photo[] = [
+  { id: 1, src: photo1, alt: "Image 1", category: "nature" },
+  { id: 2, src: photo2, alt: "Image 2", category: "nature" },
+  { id: 3, src: photo3, alt: "Image 3", category: "nature" },
+  { id: 4, src: photo4, alt: "Image 4", category: null },
+  { id: 5, src: photo5, alt: "Image 5", category: null },
+  { id: 6, src: photo6, alt: "Image 6", category: null },
+];
 
-export default async function Home() {
-  const photos = await getPhotos();
-
+export default function Home() {
   return (
     <div className="min-h-screen text-slate-100 dark:text-slate-800 relative">
       <div className="absolute inset-0 z-0">
@@ -46,3 +42,5 @@ export default async function Home() {
     </div>
   );
 }
+
+export const dynamic = "force-static";
