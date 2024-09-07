@@ -17,45 +17,6 @@ interface PhotoGridProps {
 export default function PhotoGrid({ photos }: PhotoGridProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
-  photos = [
-    {
-      id: 1,
-      src: photo1,
-      alt: "Image 1",
-      category: "nature",
-    },
-    {
-      id: 2,
-      src: photo2,
-      alt: "Image 2",
-      category: "nature",
-    },
-    {
-      id: 3,
-      src: photo3,
-      alt: "Image 3",
-      category: "nature",
-    },
-    {
-      id: 4,
-      src: photo4,
-      alt: "Image 4",
-      category: null,
-    },
-    {
-      id: 5,
-      src: photo5,
-      alt: "Image 5",
-      category: null,
-    },
-    {
-      id: 6,
-      src: photo6,
-      alt: "Image 6",
-      category: null,
-    },
-  ];
-
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
