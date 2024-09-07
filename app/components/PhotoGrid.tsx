@@ -2,13 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
-
-interface Photo {
-  id: number;
-  src: string;
-  alt: string;
-  category: string;
-}
+import { Photo } from "../objects/Photo";
 
 interface PhotoGridProps {
   photos: Photo[];

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Tab, TabGroup, TabList, TabPanels, TabPanel } from "@headlessui/react";
 import PhotoGrid from "./PhotoGrid";
+import { Photo } from "../objects/Photo";
 
 const tabs = [
   {
@@ -18,19 +19,12 @@ const tabs = [
   },
 ];
 
-type PhotoObject = {
-  id: number;
-  src: string;
-  alt: string;
-  category: string | null;
-};
-
-const photos: PhotoObject[] = [];
+const photos: Photo[] = [];
 
 export default function Body() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const filteredPhotos =
+  const filteredPhotos: Photo[] =
     selectedIndex === 0
       ? photos
       : photos.filter((photo) => photo.category === tabs[selectedIndex].key);
