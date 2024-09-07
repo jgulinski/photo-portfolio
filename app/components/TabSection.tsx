@@ -16,16 +16,16 @@ const tabs = [
     key: "nature",
     display: "Nature",
   },
-  {
-    key: "random",
-    display: "Random",
-  },
 ];
 
-const photos = [
-  { id: 1, src: "/photo1.jpg", alt: "Street photo 1", category: "random" },
-  { id: 2, src: "/photo2.jpg", alt: "Street photo 2", category: "nature" },
-];
+type PhotoObject = {
+  id: number;
+  src: string;
+  alt: string;
+  category: string | null;
+};
+
+const photos: PhotoObject[] = [];
 
 export default function Body() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -48,7 +48,7 @@ export default function Body() {
                 className={`
                       ${
                         selected
-                          ? "text-slate-100 dark:text-stone-800 border-b-2 border-slate-100 dark:border-stone-800"
+                          ? "text-slate-100 order-b-2 border-slate-100"
                           : "text-stone-400 dark:text-stone-600"
                       }
                       font-medium tracking-wide hover:text-white dark:hover:text-black
@@ -61,10 +61,7 @@ export default function Body() {
           </Tab>
         ))}
       </TabList>
-      <TabPanels className="bg-stone-900 bg-opacity-40 dark:bg-slate-100 dark:bg-opacity-40 w-[95%] max-w-screen-lg p-6 my-8 rounded-lg shadow-lg mx-auto">
-        <TabPanel>
-          <PhotoGrid photos={filteredPhotos} />
-        </TabPanel>
+      <TabPanels className="bg-stone-900 bg-opacity-40 w-[95%] max-w-screen-lg p-6 my-8 rounded-lg shadow-lg mx-auto">
         <TabPanel>
           <PhotoGrid photos={filteredPhotos} />
         </TabPanel>
