@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Lightbox from "./LightBox";
+import Lightbox from "./Lightbox";
 
 interface Photo {
   id: number;
