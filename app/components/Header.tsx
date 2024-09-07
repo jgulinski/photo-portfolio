@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center h-24 px-8 bg-gradient-to-b from-black to-transparent">
       <div className="text-2xl font-semibold tracking-wide text-slate-100">
-        Photography Portfolio
+        JG Photography
       </div>
       <div className="flex items-center space-x-4">
         <button
